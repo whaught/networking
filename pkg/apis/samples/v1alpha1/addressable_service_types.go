@@ -47,6 +47,7 @@ type AddressableService struct {
 var _ apis.Validatable = (*AddressableService)(nil)
 var _ apis.Defaultable = (*AddressableService)(nil)
 var _ kmeta.OwnerRefable = (*AddressableService)(nil)
+var _ duckv1.KRShaped = (*AddressableService)(nil)
 
 // AddressableServiceSpec holds the desired state of the AddressableService (from the client).
 type AddressableServiceSpec struct {

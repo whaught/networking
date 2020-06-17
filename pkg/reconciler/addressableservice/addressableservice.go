@@ -60,13 +60,11 @@ func (r *Reconciler) ReconcileKind(ctx context.Context, o *samplesv1alpha1.Addre
 		// When a controller needs finalizer handling, it would go here.
 		return nil
 	}
-	o.Status.InitializeConditions()
 
 	if err := r.reconcileForService(ctx, o); err != nil {
 		return err
 	}
 
-	o.Status.ObservedGeneration = o.Generation
 	return newReconciledNormal(o.Namespace, o.Name)
 }
 
